@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biodata Unik</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      min-height: 100vh;
+      color: #fff;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px 0;
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      margin: 0 25px;
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+    }
+
+    nav a i {
+      margin-right: 8px;
+    }
+
+    nav a:hover {
+      color: #ffd93d;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      transition: all 0.3s ease-in-out;
+    }
+
+    section {
+      display: none;
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    img.profile {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 20px;
+      border: 4px solid #fff;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 16px;
+      margin: 8px 0;
+    }
+
+    .label {
+      color: #ffd93d;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigasi -->
+  <nav>
+    <a href="#" onclick="showSection('beranda')"><i class="fas fa-home"></i>Beranda</a>
+    <a href="#" onclick="showSection('profil')"><i class="fas fa-user"></i>Profil</a>
+    <a href="#" onclick="showSection('kontak')"><i class="fas fa-envelope"></i>Kontak</a>
+  </nav>
+
+  <div class="container">
+    <!-- Beranda -->
+    <section id="beranda" class="active">
+      <h1>Halo! 👋</h1>
+      <p style="text-align: center;">Selamat datang di halaman biodata saya. Pilih menu di atas untuk menjelajah lebih lanjut!</p>
+    </section>
+
+    <!-- Profil -->
+    <section id="profil">
+      <img src="H:\aswar XI TKJ4/fzn.jpeg" alt="Foto Profil" class="profile" />
+      <h2>Profil Saya</h2>
+      <p><span class="label">Nama:</span> albar fauzan</p>
+      <p><span class="label">Tempat, Tanggal Lahir:</span> bantaeng, 8 mei 2008</p>
+      <p><span class="label">Alamat:</span> Jl. andi mannappiang (pasorongi)</p>
+      <p><span class="label">Hobi:</span> main bola,takrow,volly</p>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak">
+      <h2>Hubungi Saya</h2>
+      <p><span class="label">Email:</span> 16628fauzu@gmail.com</p>
+      <p><span class="label">WhatsApp:</span> 08*8*133*42*</p>
+      <p><span class="label">Instagram:</span> @ocang_025</p>
+    </section>
+  </div>
+
+  <footer>&copy; 2025 fauzan.</footer>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll("section");
+      sections.forEach(sec => sec.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+  </script>
+</body>
+</html>
